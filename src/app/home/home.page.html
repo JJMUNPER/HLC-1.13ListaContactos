@@ -1,20 +1,23 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Lista de Contactos
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let user of users | async">
+        <ion-card>
+          <ion-card-content>
+            <img [src]="user.picture.medium">
+            <h1>{{ user.name.first }} {{ user.name.last }}</h1>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget justo arcu. Donec sed eros sit amet urna convallis ultricies eget vel sem. Nam massa velit, rhoncus id ligula non, auctor vestibulum libero.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
