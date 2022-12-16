@@ -12,7 +12,8 @@ export class HomePage {
   users: any;
 
   constructor(private httpClient: HttpClient) {
-  
+
+    this.users = this.httpClient.get('https://randomuser.me/api?results=20')  
   }
 
 }
